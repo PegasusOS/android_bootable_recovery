@@ -73,6 +73,10 @@ static bool IsDeviceUnlocked() {
   return "orange" == android::base::GetProperty("ro.boot.verifiedbootstate", "");
 }
 
+std::string get_build_type() {
+  return android::base::GetProperty("ro.build.type", "");
+}
+
 static void UiLogger(android::base::LogId /* id */, android::base::LogSeverity severity,
                      const char* /* tag */, const char* /* file */, unsigned int /* line */,
                      const char* message) {
